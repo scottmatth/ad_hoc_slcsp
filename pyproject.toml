@@ -1,0 +1,17 @@
+[tool.setuptools.packages.find]
+where = ["src/"]
+include = ["slcsp"]
+[project]
+name = "SLCSP"
+version = "0.1.0"
+description = "Take home homework to determine the second lowest cost silver plan of give CSV(s)"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.2.5",
+    "pandas>=2.2.3",
+]
+[tool.pytest.ini_options]
+pythonpath = "src"
+testpaths = [
+    "tests"
+]
