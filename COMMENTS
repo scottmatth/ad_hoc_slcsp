@@ -8,3 +8,6 @@ python3 -m venv [Name of virtual environment]
 activate the environment
 source [Name of virtual environment]/bin/activate
 
+perform pip installs
+* pip install pandas
+* pip install pytest
