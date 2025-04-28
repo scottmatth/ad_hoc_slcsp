@@ -25,7 +25,7 @@ def parse_csv_and_filter(file_name:str, parse_index:int=None, filter:str = None)
         if filter is None or (parse_index is not None and parsed_row[parse_index] == filter):
             yield parsed_row
 
-def find_second_lowest_rate(zipcode:str, zipcode_data:dict(dict(list()))):
+def find_second_lowest_rate(zipcode:str, zipcode_data:dict(dict(list()))) ->float|None:
     """
     Given a working Zip Code , this method will cross reference the data along the
     State and Plan area to determine the Second lowest cost Silver plan
@@ -35,17 +35,18 @@ def find_second_lowest_rate(zipcode:str, zipcode_data:dict(dict(list()))):
     Returns:
         either None if data was not able to be found, OR the 
     """
-    zip_entries = zipcode_data[zipcode]
+    if zipcode in zipcode_data.keys():
+        zip_entries = zipcode_data[zipcode]
 
-    rate_data = None
-    if len(zip_entries) == 1:
-    # loop through all Zip Entries from zip.csv
-        for zip_index, zip_data in zip_entries.items():
-            # Find the plan data for the gien Zip Entry 
-            if zip_data and len(zip_data) > 1:
-                plans_in_order = sorted(list(map(float, set(zip_data))))
-                rate_data = plans_in_order[1]
-    return rate_data
+        rate_data = None
+        if len(zip_entries) == 1:
+        # loop through all Zip Entries from zip.csv
+            for zip_index, zip_data in zip_entries.items():
+                # Find the plan data for the gien Zip Entry 
+                if zip_data and len(zip_data) > 1:
+                    plans_in_order = sorted(list(map(float, set(zip_data))))
+                    rate_data = plans_in_order[1]
+        return rate_data
                                                             
 
 
