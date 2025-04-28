@@ -2,7 +2,7 @@ import pandas as pd
 from slcsp import ROOT_SRC_DIR
 
 def determine_second_lowest_rate(zipcode:str,
-                                 zip_to_rates:pd.DataFrame) -> int | None:
+                                 zip_to_rates:pd.DataFrame) -> float | None:
     """
     Parses the joined dataframe of existing zipcodes and rates to determine the
     second lowest cost silver rate for the given Zipcode
