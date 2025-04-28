@@ -9,5 +9,16 @@ activate the environment
 source [Name of virtual environment]/bin/activate
 
 perform pip installs
-* pip install pandas
-* pip install pytest
+* python3 -m pip install ".[dependencies]"
+
+run unit tests to ensure things are running
+* pytest
+
+execute python scripts
+
+* cd src/slcsp
+* python3 slcsp.py
+** This is the basic version using just loading and interpreting the CSV to derive the solution
+* python3 slcsp_with_pandas.py
+** Judging by what type of work is done at Ad Hoc, it seemed likely Pandas was used,
+** so I implemented a solution with pandas.  The unit tests covers these methods
