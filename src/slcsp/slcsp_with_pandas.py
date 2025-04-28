@@ -1,5 +1,8 @@
 import pandas as pd
-from slcsp import ROOT_SRC_DIR
+from pathlib import Path
+
+ROOT_SRC_DIR = Path(__file__).parent.parent
+
 
 def determine_second_lowest_rate(zipcode:str,
                                  zip_to_rates:pd.DataFrame) -> float | None:
