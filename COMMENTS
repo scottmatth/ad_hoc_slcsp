@@ -1,0 +1,10 @@
+Ensure Python3 and Pip are installed
+If not, install them
+Ensure venv is available for python (it should if you are using a version above 3.3)
+
+create a new Virtual environment
+python3 -m venv [Name of virtual environment]
+
+activate the environment
+source [Name of virtual environment]/bin/activate
+
